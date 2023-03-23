@@ -1,0 +1,111 @@
+src :- 
+  a folder where our source code will be placed
+
+  app folder by default (app-module)
+      app-routing.module.ts is responsible to handle the routing work
+      app.component.html is responsible to handle the html code (template)
+      app.component.scss is responsible to handle the style sheet
+      app.component.spec.ts is responsible to handle the test cases using typescript
+      app.component.ts is responsible to handle the coding logic using typescript 
+      app.module.ts is responsible to manage the setting related to app module
+
+
+
+      ng generate module <module-name>
+
+      ng g m <module-name>
+
+
+
+
+ inside a module.ts file
+      Module class
+
+      NgModule decorator it is written with @ symbol
+            -declaration []  register the components related to the module
+            -bootstrap [] place the default component to start 
+            - import[] is used to import other modules (predefined/ user-defined)
+            - export [] is used to export the components of the module
+            -providers [] is used to do the injection of the services
+
+
+
+-- interview
+-- authentication
+
+
+
+
+Component:- is used to handle the logic. it is very small functionality where you will handle the logic 
+          A component will have a class. and a component decorator on it.
+          a component decorator has following properties
+           selector :- selector is used to access the html code (template) associated with the component
+           templateUrl :- use to define the url of the html component template
+           styleUrls[] :- gve the path to the style sheets
+           providers[] :- is used to inject the services in the component
+
+           ng generate component <component-name>
+           ng g c <component-name>
+              -- template
+              -- component
+              -- stylesheet
+              -- spec file for unit testing
+              -- register component in module file
+
+
+
+databinding
+    -- one way
+         1. send data from component to template (property binding)
+         1.1 send data from component to template using interpolation
+
+         2. template to component (event binding)
+
+   -- two binding
+         data can be sent from component to template and vice versa -- ngModel
+         to use ngModel in Module then import formsModule inside the module
+         [(ngModel)] -- banana in a box
+
+
+
+-- directives
+     structural directives :- they are used to define the html structure in the template. You can show or hide
+                     the html element using the structure directive. they are written with the *
+                     *ngIf, *ngFor, *ngSwitch
+
+                     while working with *ngIf to use else statement we need ng-template
+
+
+     class directives
+     attribute directives
+
+
+     -- custom pipes
+       -- classes
+        -- Pipe decorator
+        -- PipeTransform  (transform)
+          --transform method must return something..
+
+          to create custom pipe use the following command
+          ng generate pipe <pipe-name>
+          ng g p <pipe-name>
+
+
+
+
+
+          home => http://localhost:4200/home
+          aboutus => http://localhost:4200/aboutus
+          employeelist => http://localhost:4200/employees-list
+          editemployee=> http://localhost:4200/employees/edit/1
+  edit/:id
+
+
+          fulltime => http://localhost:4200/employee/fulltime
+          partime => http://localhost:4200/employee/partime
+
+          component-routing.module.ts
+
+
+try to understand the difference between dynamic url vs querystring
+

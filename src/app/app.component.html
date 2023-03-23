@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="'/home'">Home <span class="sr-only"></span></a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+
+<h1>First angular tutorial</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-3">
+            <input type="text" id="firstNumber" [value]="firstNumber" [(ngModel)]="firstNumber" placeholder="Enter first number" class="form-control"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <input type="text" [value]="lastNumber" [(ngModel)]="lastNumber" placeholder="Enter second number" class="form-control"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 my-3">
+            <input type="button" value="Addition" class="btn btn-primary" (click)="addNumbers()"/>
+        </div>
+    </div>
+    Sum = {{sum}}
+</div>
+<hr/>
+<div *ngIf="isRedColor; else notred">
+    yes, the color is red
+</div>
+<ng-template #notred >
+    color is not read
+</ng-template>
+<hr/>
+<button type="button" (click)="toggleForm()" class="btn btn-warning" >Toggle heading</button>
+
+<div *ngIf="show">
+    <h1>  show or hide this div </h1>
+</div>
+
+<div class="container">
+    
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Birth Date</th>
+        <th>SSN</th>
+        <th>Index</th>
+        <th>Is First</th>
+        <th>Is Last</th>
+        <th>Is Even</th>
+        <th>Is Odd</th>
+        <th>Count</th>
+    </tr>
+    <tr *ngFor="let e of employees; index as i; first as f; last as l; even as ev;odd as o;count as c">
+        <td>{{e.id}}</td>
+        <td>{{e.name | titlecase}}</td>
+        <td>{{e.salary | currency:'INR'}}</td>
+        <td>{{e.dob | age}}</td>
+        <td> {{e.ssn |ssncase}} </td>
+        <td>{{i}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+        <td>{{ev}}</td>
+        <td>{{o}}</td>
+        <td>{{c}}</td>
+    </tr>
+</table>
+
+select any employee
+<select>
+    <option *ngFor="let e of employees"> {{e.name}}</option>
+</select>
+
+</div>
+
+
+<router-outlet></router-outlet>

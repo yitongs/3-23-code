@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Edit</th>
+    </tr>
+    <tr *ngFor="let e of employees">
+        <td>{{e.id}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.age}}</td>
+        <td>
+            <a [routerLink]="['/employee-edit',e.id]">Edit</a> | 
+            <a [routerLink]="['/employee-edit',e.id,'age',e.age]">Edit with two parameters</a>
+        </td>
+    </tr>
+</table>
